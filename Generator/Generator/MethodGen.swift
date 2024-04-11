@@ -90,7 +90,7 @@ func methodGen (_ p: Printer, method: MethodDefinition, className: String, cdef:
     
     //let loc = "\(cdef.name).\(method.name)"
     if (method.arguments ?? []).contains(where: { $0.type.contains("*")}) {
-        //print ("TODO: do not currently have support for C pointer types \(loc)")
+        print ("TODO: do not currently have support for C pointer types \(className)::\(method.name)")
         return nil
     }
 //    if method.returnValue?.type.firstIndex(of: "*") != nil {
