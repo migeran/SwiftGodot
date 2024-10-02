@@ -301,6 +301,8 @@ public enum JGodotArgumentMeta: String, Codable {
     case uint32 = "uint32"
     case uint64 = "uint64"
     case uint8 = "uint8"
+    case char16 = "char16"
+    case char32 = "char32"
 }
 
 // MARK: - JGodotOperator
