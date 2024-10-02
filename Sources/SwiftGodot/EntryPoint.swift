@@ -116,6 +116,7 @@ struct GodotInterface {
     
     let classdb_construct_object: GDExtensionInterfaceClassdbConstructObject
     let classdb_get_method_bind: GDExtensionInterfaceClassdbGetMethodBind
+    let classdb_get_class_tag: GDExtensionInterfaceClassdbGetClassTag
     let classdb_register_extension_class: GDExtensionInterfaceClassdbRegisterExtensionClass2
     let classdb_register_extension_class_signal: GDExtensionInterfaceClassdbRegisterExtensionClassSignal
     let classdb_register_extension_class_method: GDExtensionInterfaceClassdbRegisterExtensionClassMethod
@@ -251,6 +252,7 @@ func loadGodotInterface (_ godotGetProcAddrPtr: GDExtensionInterfaceGetProcAddre
         
         classdb_construct_object: load ("classdb_construct_object"),
         classdb_get_method_bind: load ("classdb_get_method_bind"),
+        classdb_get_class_tag: load("classdb_get_class_tag"),
         classdb_register_extension_class: load ("classdb_register_extension_class2"),
         classdb_register_extension_class_signal: load ("classdb_register_extension_class_signal"),
         classdb_register_extension_class_method: load ("classdb_register_extension_class_method"),
@@ -335,7 +337,7 @@ func loadGodotInterface (_ godotGetProcAddrPtr: GDExtensionInterfaceGetProcAddre
 /// your Swift entry point, which can look like this:
 ///
 /// ```
-/// @cdecl ("swift_entry_point")
+/// @cdecl("swift_entry_point")
 /// public func swift_entry_point (i: OpaquePointer?, l: OpaquePointer?, e: OpaquePointer?) -> UInt8 {
 ///     guard let iface, let lib, let ext else {
 ///         return 0
